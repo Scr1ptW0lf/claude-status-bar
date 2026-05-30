@@ -23,24 +23,26 @@ else
     exit 1
 fi
 
-COMMAND="$PY \"$DEST\""
-
-# Merge statusLine into settings.json using python
-$PY - <<PYEOF
+# Merge statusLine into settings.json; pass values via env to avoid quote escaping
+CLAUDE_PY="$PY" CLAUDE_DEST="$DEST" CLAUDE_SETTINGS="$SETTINGS" \
+$PY - <<'PYEOF'
 import json, os
 
-settings_path = os.path.expanduser("$SETTINGS")
+py       = os.environ['CLAUDE_PY']
+dest     = os.environ['CLAUDE_DEST']
+settings_path = os.environ['CLAUDE_SETTINGS']
+
 if os.path.exists(settings_path):
     with open(settings_path) as f:
         settings = json.load(f)
 else:
     settings = {}
 
-settings["statusLine"] = {"type": "command", "command": "$COMMAND"}
+settings['statusLine'] = {'type': 'command', 'command': f'{py} "{dest}"'}
 
-with open(settings_path, "w") as f:
+with open(settings_path, 'w') as f:
     json.dump(settings, f, indent=2)
-    f.write("\n")
+    f.write('\n')
 
 print(f"Updated {settings_path}")
 PYEOF
