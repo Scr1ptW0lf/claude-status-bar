@@ -2,7 +2,7 @@
 
 Custom status line for [Claude Code](https://claude.ai/code) showing folder, git branch, model, context usage, and rate limits.
 
-![status bar example](https://img.shields.io/badge/example-folder%20(branch)%20%7C%20Sonnet%204.6%20%7C%20ctx%3A12%25-blue)
+![](https://img.shields.io/badge/-project--name-yellow?style=flat-square) ![](https://img.shields.io/badge/-(main)-06b6d4?style=flat-square) ![](https://img.shields.io/badge/-Claude_Sonnet_4.6-d946ef?style=flat-square) ![](https://img.shields.io/badge/-ctx:12%25_(24.3k%2F200k)-22c55e?style=flat-square) ![](https://img.shields.io/badge/-%5B5h:34%25_rst:2h15m_7d:8%25%5D-yellow?style=flat-square)
 
 ## Install
 
