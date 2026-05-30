@@ -2,7 +2,7 @@
 
 Custom status line for [Claude Code](https://claude.ai/code) showing folder, git branch, model, context usage, and rate limits.
 
-![](status-bar-screenshot.png)
+![](status-bar-example.png)
 
 ## Install
 
