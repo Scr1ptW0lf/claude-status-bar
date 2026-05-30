@@ -18,7 +18,7 @@ print(f"Copied statusline-command.py -> {DEST}")
 
 # Use the same interpreter that's running this script
 py = sys.executable
-command = f'{py} "{DEST}"'
+command = f'"{py}" "{DEST}"'
 
 if os.path.exists(SETTINGS_PATH):
     with open(SETTINGS_PATH) as f:
